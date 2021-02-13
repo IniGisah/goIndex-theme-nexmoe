@@ -87,6 +87,10 @@ function html(current_drive_order = 0, model = {}) {
 <!DOCTYPE html>
 <html>
 <head>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+  </style>
+  <link rel="icon" href="https://ssl.gstatic.com/docs/doclist/images/infinite_arrow_favicon_5.ico">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
   <title>${authConfig.siteName}</title>
@@ -97,7 +101,7 @@ function html(current_drive_order = 0, model = {}) {
     window.current_drive_order = ${current_drive_order};
     window.UI = JSON.parse('${JSON.stringify(uiConfig)}');
   </script>
-  <script src="https://cdn.jsdelivr.net/gh/Genos2000/goIndex-theme-nexmoe@master/app_v3_en.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/IniGisah/goIndex-theme-nexmoe@master/app_v3_en.min.js"></script>
 </head>
 <body>
 </body>

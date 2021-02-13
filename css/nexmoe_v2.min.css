@@ -1,3 +1,7 @@
+@font-face{
+    font-family: 'Raleway', sans-serif;
+}
+
 /*隐藏滚动条*/
 ::-webkit-scrollbar {
     width: 0px;
@@ -16,6 +20,19 @@
     height: 56px;
     max-width: 1100px;
     margin: 0 auto;
+}
+ul#judul{
+    list-style: none;
+}
+ul#judul li{
+    display: inline;
+    padding-left: 70px;
+    padding-top: 17px;
+    position: absolute;
+    font-weight: 400;
+    font-size: large;
+    letter-spacing: 2px;
+    font-family: Raleway;
 }
 /* 头像 */
 .avatar{
