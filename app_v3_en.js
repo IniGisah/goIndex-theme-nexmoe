@@ -5526,7 +5526,7 @@ function init() {
         UI.disable_navicon == true ? "none" : "block"
       }">
 				<ul class="menu_ul">
-					<li class="menu_li"><a href="t.me/luiiindex_bot" target="_blank">Bot Link</a></li>
+					<li class="menu_li"><a href="https://t.me/luiiindex_bot" target="_blank">Bot Link</a></li>
 					<li class="menu_li"><a href="https://github.com/5MayRain/goIndex-theme-nexmoe" target="_blank">Github Source</a></li>
 				</ul>
 				<div class="nav_icon" ></div>
