@@ -5481,9 +5481,15 @@
 document.write(
   '<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/IniGisah/goIndex-theme-nexmoe@master/css/mdui_v2.min.css" asyc>'
 );
-document.write(
-  '<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/IniGisah/goIndex-theme-nexmoe@master/css/nexmoe_v2.min.css" async>'
-);
+if (UI.custom_avatar == true) {
+  document.write(
+    '<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/IniGisah/goIndex-theme-nexmoe@master/css/nexmoe_v2.min.css" async>'
+  );
+} else if (UI.custom_avatar == false){
+  document.write(
+    '<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/IniGisah/goIndex-theme-nexmoe@master/css/nexmoe_v2.min_luii.css" async>'
+  );
+}
 document.write(
   '<script src="//cdn.jsdelivr.net/gh/IniGisah/goIndex-theme-nexmoe@master/js/mdui.min.js"></script async>'
 );
@@ -5520,7 +5526,9 @@ function init() {
   <div class="navSize">
     <ul id="judul">
       <li><a href="/"><img class="avatar" src="${UI.avatar}"/></a></li>
-      <li>${document.siteName}</li>
+      <li style="display:${
+        UI.navigation_title == true ? "block" : "none"
+      }>${document.siteName}</li>
     </ul>
 			<div class="nav_menu"  style="display:${
         UI.disable_navicon == true ? "none" : "block"

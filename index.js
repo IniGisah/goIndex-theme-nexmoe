@@ -46,7 +46,9 @@ const uiConfig = {
   "accent_color": "blue",
   "fluid_navigation_bar": true,
   "avatar": "https://i.ibb.co/DwMwdFv/photo-2020-05-25-22-58-28.jpg",
-  "disable_navicon": true
+  "disable_navicon": true,
+  "navigation_title": true,
+  "custom_avatar": false
 };
 
 /**

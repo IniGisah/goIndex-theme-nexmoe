@@ -1,4 +1,4 @@
-<p align="center"><img src="images/ss.png"></p>
+<p align="center"><img src="images/ss2.png"></p>
 
 # goIndex-theme-nexmoe
 
@@ -24,6 +24,8 @@ const uiConfig = {
   .......
   "avatar": "https://i.ibb.co/jW0TDZH/image.png",  // Changes the avatar image in the navbar
   "disable_navicon": true // Disables useless nav menu in navbar
+  "custom_avatar": false // Enable custom avatar
+  "navigation_title": true // Enable title on navigation bar
   .......
 };
 ```
