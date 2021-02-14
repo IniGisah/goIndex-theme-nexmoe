@@ -5510,7 +5510,7 @@ document.write(
     `<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/IniGisah/goIndex-theme-nexmoe@master/css/material-dark.min.css" async>
     <meta name="theme-color" content="#121212">`
   );*/
-if (getCookie(theme) == "dark") {
+if (getCookie("theme") == "dark") {
   document.write(
     `<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/IniGisah/goIndex-theme-nexmoe@master/css/dark.min.css" async>
     <meta name="theme-color" content="#0D0D0D">`
@@ -5537,11 +5537,11 @@ function getCookie(name) {
 }
 function setthemeonClick() {
   var theme = getCookie("theme")
-  if (theme == light) {
+  if (theme == "light") {
     document.cookie = "theme=dark; expires=Thu, 31 Dec 2099 23:59:59 GMT";
     location.reload();
     return false;
-  } else if (theme == dark) {
+  } else if (theme == "dark") {
     document.cookie = "theme=light; expires=Thu, 31 Dec 2099 23:59:59 GMT";
     location.reload();
     return false;
