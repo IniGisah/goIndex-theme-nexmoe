@@ -5505,18 +5505,53 @@ document.write(
 document.write(
   "<style>.mdui-appbar .mdui-toolbar{height:56px;font-size:1pc}.mdui-toolbar>i{opacity:.5}.mdui-toolbar>i{padding:0}.mdui-toolbar>a:hover,a.active,a.mdui-typo-headline{opacity:1}.mdui-container{max-width:980px}.mdui-list-item{transition:none}.mdui-list>.th{background-color:initial}.mdui-list-item>a{width:100%;line-height:3pc}.mdui-list-item{margin:2px 0;padding:0}.mdui-toolbar>a:last-child{opacity:1}@media screen and (max-width:980px){.mdui-list-item .mdui-text-right{display:none}.mdui-container{width:100%!important;margin:0}}</style>"
 );
-if (UI.theme == "material-dark") {
+/*if (UI.theme == "material-dark") {
   document.write(
     `<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/IniGisah/goIndex-theme-nexmoe@master/css/material-dark.min.css" async>
     <meta name="theme-color" content="#121212">`
-  );
-} else if (UI.theme == "dark") {
+  );*/
+if (getCookie(theme) == "dark") {
   document.write(
     `<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/IniGisah/goIndex-theme-nexmoe@master/css/dark.min.css" async>
     <meta name="theme-color" content="#0D0D0D">`
   );
 }
+function getCookie(name) {
+  // Split cookie string and get all individual name=value pairs in an array
+  var cookieArr = document.cookie.split(";");
+  
+  // Loop through the array elements
+  for(var i = 0; i < cookieArr.length; i++) {
+      var cookiePair = cookieArr[i].split("=");
+      
+      /* Removing whitespace at the beginning of the cookie name
+      and compare it with the given string */
+      if(name == cookiePair[0].trim()) {
+          // Decode the cookie value and return
+          return decodeURIComponent(cookiePair[1]);
+      }
+  }
+  
+  // Return null if not found
+  return null;
+}
+function setthemeonClick() {
+  var theme = getCookie("theme")
+  if (theme == light) {
+    document.cookie = "theme=dark; expires=Thu, 31 Dec 2099 23:59:59 GMT";
+    location.reload();
+    return false;
+  } else if (theme == dark) {
+    document.cookie = "theme=light; expires=Thu, 31 Dec 2099 23:59:59 GMT";
+    location.reload();
+    return false;
+  }
+}
 function init() {
+  var theme = getCookie("theme")
+  if (theme == "") {
+    document.cookie = "theme=light; expires=Thu, 31 Dec 2099 23:59:59 GMT";
+  }
   document.siteName = $("title").html();
   $("body").addClass(
     `mdui-theme-primary-${UI.main_color} mdui-theme-accent-${UI.accent_color}`
@@ -5537,8 +5572,9 @@ function init() {
 					<li class="menu_li"><a href="https://t.me/luiiindex_bot" target="_blank">Bot Link</a></li>
 					<li class="menu_li"><a href="https://github.com/5MayRain/goIndex-theme-nexmoe" target="_blank">Github Source</a></li>
 				</ul>
-				<div class="nav_icon" ></div>
-			</div>
+        <div class="nav_icon"></div>
+        <div class="nav_icon_thememode" onclick="${setthemeonclick()}"></div>
+      </div>
 	</div>
 </header>
 <div class="mdui-container">

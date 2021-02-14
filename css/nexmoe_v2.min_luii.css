@@ -127,6 +127,15 @@ opacity: 1; /*结尾状态 透明度为1*/
     transition: .6s;
     cursor: pointer;
 }
+.nav_icon_thememode{
+    float: left;
+    width: 26px;
+    height: 26px;
+    background: url(https://i.ibb.co/G5Rq62T/theme-light-dark-icon-137104.png);
+    background-size:100% 100%;
+    transition: .6s;
+    cursor: pointer;
+}
 /* 图标动画icon */
 .nav_icon:hover{
     background: url(../images/icon_close.png);
