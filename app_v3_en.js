@@ -5528,7 +5528,7 @@ function init() {
       <li><a href="/"><img class="avatar" src="${UI.avatar}"/></a></li>
       <li style="display:${
         UI.navigation_title == true ? "block" : "none"
-      }>${document.siteName}</li>
+      }">${document.siteName}</li>
     </ul>
 			<div class="nav_menu"  style="display:${
         UI.disable_navicon == true ? "none" : "block"
