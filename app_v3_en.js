@@ -5559,31 +5559,6 @@ function init() {
 					<li class="menu_li"><a href="https://t.me/luiiindex_bot" target="_blank">Bot Link</a></li>
 					<li class="menu_li"><a href="https://github.com/5MayRain/goIndex-theme-nexmoe" target="_blank">Github Source</a></li>
 				</ul>
-        <script>
-        function setthemeonClick() {
-          var theme = getCookie("theme")
-          if (theme == "light") {
-            document.cookie = "theme=dark; expires=Thu, 31 Dec 2099 23:59:59 GMT";
-            location.reload();
-            return false;
-          } else if (theme == "dark") {
-            document.cookie = "theme=light; expires=Thu, 31 Dec 2099 23:59:59 GMT";
-            location.reload();
-            return false;
-          }
-        }
-        function getCookie(name) {
-          var cookieArr = document.cookie.split(";");
-          for(var i = 0; i < cookieArr.length; i++) {
-              var cookiePair = cookieArr[i].split("=");
-              and compare it with the given string */
-              if(name == cookiePair[0].trim()) {
-                  return decodeURIComponent(cookiePair[1]);
-              }
-          }
-          return null;
-        }
-        </script>
         <div class="nav_icon"></div>
         <div class="nav_icon_thememode" onclick="setthemeonclick()"></div>
       </div>
@@ -5599,6 +5574,31 @@ function init() {
 	 	<div id="readme_md" class="mdui-typo nexmoe-item" style="display:none; padding: 20px 0;"></div>
 	</div>
 </div>
+<script>
+function setthemeonclick() {
+  var theme = getCookie("theme")
+  if (theme == "light") {
+    document.cookie = "theme=dark; expires=Thu, 31 Dec 2099 23:59:59 GMT";
+    location.reload();
+    return false;
+  } else if (theme == "dark") {
+    document.cookie = "theme=light; expires=Thu, 31 Dec 2099 23:59:59 GMT";
+    location.reload();
+    return false;
+  }
+}
+function getCookie(name) {
+  var cookieArr = document.cookie.split(";");
+  for(var i = 0; i < cookieArr.length; i++) {
+      var cookiePair = cookieArr[i].split("=");
+      and compare it with the given string */
+      if(name == cookiePair[0].trim()) {
+          return decodeURIComponent(cookiePair[1]);
+      }
+  }
+  return null;
+}
+</script>
 	`;
   $("body").html(html);
 }
