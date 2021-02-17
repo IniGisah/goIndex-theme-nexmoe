@@ -5536,7 +5536,7 @@ function getCookie(name) {
 }
 function init() {
   var theme = getCookie("theme")
-  if (theme == "") {
+  if (theme == null) {
     document.cookie = "theme=light; expires=Thu, 31 Dec 2099 23:59:59 GMT";
   }
   document.siteName = $("title").html();
@@ -5547,7 +5547,9 @@ function init() {
 <header class="nexmoe-nav">
   <div class="navSize">
     <ul id="judul">
-      <li><a href="/"><img class="avatar" src="${UI.avatar}"/></a></li>
+      <li><a href="/"><img class="avatar" style="filter:${
+        (theme == "dark" && UI.custom_avatar == true) ? "invert()" : ""
+      }"src="${UI.avatar}"/></a></li>
       <li style="display:${
         UI.navigation_title == true ? "block" : "none"
       }">${document.siteName}</li>
@@ -5559,9 +5561,13 @@ function init() {
 					<li class="menu_li"><a href="https://t.me/luiiindex_bot" target="_blank">Bot Link</a></li>
 					<li class="menu_li"><a href="https://github.com/5MayRain/goIndex-theme-nexmoe" target="_blank">Github Source</a></li>
 				</ul>
-        <div class="nav_icon"></div>
-        <div class="nav_icon_thememode" onclick="setthemeonclick()"></div>
-      </div>
+        <div class="nav_icon" style="filter:${
+          theme == "dark" ? "invert()" : ""
+        }"></div>
+        <div class="nav_icon_thememode" style="filter:${
+          theme == "dark" ? "invert()" : ""
+        }" onclick="setthemeonclick()"></div>
+        </div>
 	</div>
 </header>
 <div class="mdui-container">
@@ -5576,8 +5582,9 @@ function init() {
 </div>
 <script>
 function setthemeonclick() {
+  /*tesu*/
   var theme = getCookie("theme")
-  if (theme == "light") {
+  if (theme == "light" || theme == null) {
     document.cookie = "theme=dark; expires=Thu, 31 Dec 2099 23:59:59 GMT";
     location.reload();
     return false;
