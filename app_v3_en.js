@@ -5591,7 +5591,6 @@ function getCookie(name) {
   var cookieArr = document.cookie.split(";");
   for(var i = 0; i < cookieArr.length; i++) {
       var cookiePair = cookieArr[i].split("=");
-      and compare it with the given string */
       if(name == cookiePair[0].trim()) {
           return decodeURIComponent(cookiePair[1]);
       }
