@@ -5537,7 +5537,7 @@ function getCookie(name) {
 function init() {
   var theme = getCookie("theme")
   if (theme == null) {
-    document.cookie = "theme=light; expires=Thu, 31 Dec 2099 23:59:59 GMT";
+    document.cookie = "theme=light; expires=Thu, 31 Dec 2099 23:59:59 GMT; path=/";
   }
   document.siteName = $("title").html();
   $("body").addClass(
@@ -5585,11 +5585,11 @@ function setthemeonclick() {
   /*tesu*/
   var theme = getCookie("theme")
   if (theme == "light" || theme == null) {
-    document.cookie = "theme=dark; expires=Thu, 31 Dec 2099 23:59:59 GMT";
+    document.cookie = "theme=dark; expires=Thu, 31 Dec 2099 23:59:59 GMT; path=/";
     location.reload();
     return false;
   } else if (theme == "dark") {
-    document.cookie = "theme=light; expires=Thu, 31 Dec 2099 23:59:59 GMT";
+    document.cookie = "theme=light; expires=Thu, 31 Dec 2099 23:59:59 GMT; path=/";
     location.reload();
     return false;
   }
