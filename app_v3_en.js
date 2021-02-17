@@ -5548,7 +5548,7 @@ function init() {
   <div class="navSize">
     <ul id="judul">
       <li><a href="/"><img class="avatar" style="filter:${
-        (theme == "dark" && UI.custom_avatar == true) ? "invert()" : ""
+        (theme == "dark" && UI.custom_avatar == false) ? "invert()" : ""
       }"src="${UI.avatar}"/></a></li>
       <li style="display:${
         UI.navigation_title == true ? "block" : "none"
